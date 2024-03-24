@@ -1,13 +1,70 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+.App,
+.Main,
+.todos-table {
+  width: 100%;
+  height: 100vh;
+}
+
+.todos-table {
+  overflow: auto;
+}
+
+.todos-table table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+
+.todos-table table thead tr {
+  height: 80px;
+  background: cornflowerblue;
+  color: #fff;
+}
+
+.todos-table table tbody tr td {
+  padding: 5px 0;
+}
+
+.todos-table table tbody tr:nth-child(even) {
+  background: whitesmoke;
+}
+
+.todos-table table thead tr th:nth-child(1),
+.todos-table table tbody tr td:nth-child(1) {
+  width: 10%;
+  text-align: center;
+}
+
+.todos-table table thead tr th:nth-child(2),
+.todos-table table tbody tr td:nth-child(2) {
+  width: 70%;
+  text-align: left;
+}
+
+.todos-table table thead tr th:nth-child(3),
+.todos-table table tbody tr td:nth-child(3) {
+  width: 20%;
+  text-align: center;
+}
+
+.todos-table table tbody tr td p {
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.todos-table table tbody tr td .com {
+  background: green;
+}
+.todos-table table tbody tr td .incom {
+  background: red;
 }
