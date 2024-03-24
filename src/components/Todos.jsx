@@ -1,7 +1,4 @@
-import React from "react";
-
-const Todos = (props) => {
-  const { todos } = props;
+const Todos = ({ todo, error }) => {
   return (
     <div className='todos-table'>
       <table>
@@ -13,24 +10,18 @@ const Todos = (props) => {
           </tr>
         </thead>
         <tbody>
-          {todos.length > 0 ? (
-            <>
-              {todos.map((todo) => (
-                <tr key={todo.id}>
-                  <td>{todo.id}</td>
-                  <td>{todo.title}</td>
-                  <td>
-                    {todo.completed ? (
-                      <p className='com'>Completed</p>
-                    ) : (
-                      <p className='incom'>Incompleted</p>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </>
-          ) : (
-            <p>No todos avaliable</p>
+          {!error && todo && (
+            <tr>
+              <td>{todo.id}</td>
+              <td>{todo.title}</td>
+              <td>
+                {todo.completed ? (
+                  <p className='com'>Completed</p>
+                ) : (
+                  <p className='incom'>Incompleted</p>
+                )}
+              </td>
+            </tr>
           )}
         </tbody>
       </table>
